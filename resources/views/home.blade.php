@@ -244,7 +244,7 @@
 
                         <div class="carousel-product">
                             <p class="home-product_info">Best Seller</p>
-                            <a href="innerproduct.html" class="product-default product-default--carousel">
+                            <a href="{{route('inner-product')}}" class="product-default product-default--carousel">
                                 <img src="assets/images/Product2.jpg" alt="Deep Dark Salted Burnt Caramel Package"
                                      class="product-default_image"/>
                                 <h6 class="product-default_title">Deep Dark Salted Burnt Caramel</h6>
@@ -253,7 +253,7 @@
                             </span>
                                 <p class="product-default_excerpt">Taste the depth and crunch only real caramel can
                                     deliver.</p>
-                                <a href="innerproduct.html" class="add_to_cart_btn">
+                                <a href="{{route('inner-product')}}" class="add_to_cart_btn">
                                     <span class="theme-button_text">Add to Cart</span>
                                 </a>
                             </a>
@@ -262,7 +262,7 @@
 
                         <div class="carousel-product">
                             <p class="home-product_info">Silky</p>
-                            <a href="innerproduct.html" class="product-default product-default--carousel">
+                            <a href="{{route('inner-product')}}" class="product-default product-default--carousel">
                                 <img src="assets/images/Product2.jpg" alt="Sea Salt Truffles Package"
                                      class="product-default_image"/>
                                 <h6 class="product-default_title">Sea Salt Truffles</h6>
@@ -271,7 +271,7 @@
                             </span>
                                 <p class="product-default_excerpt">Savor the subtle crunch, then let the centre melt
                                     away. </p>
-                                <a href="innerproduct.html" class="add_to_cart_btn">
+                                <a href="{{route('inner-product')}}" class="add_to_cart_btn">
                                     <span class="theme-button_text">Add to Cart</span>
                                 </a>
                             </a>
@@ -280,7 +280,7 @@
 
                         <div class="carousel-product">
                             <p class="home-product_info">Classic</p>
-                            <a href="innerproduct.html" class="product-default product-default--carousel">
+                            <a href="{{route('inner-product')}}" class="product-default product-default--carousel">
                                 <img src="assets/images/Product2.jpg" alt="Classic Dark Truffles Package"
                                      class="product-default_image"/>
                                 <h6 class="product-default_title">Classic Dark Truffles</h6>
@@ -290,7 +290,7 @@
                                 <p class="product-default_excerpt">Deep, dark and creamy, its virtues will melt your
                                     defences.
                                 </p>
-                                <a href="innerproduct.html" class="add_to_cart_btn">
+                                <a href="{{route('inner-product')}}" class="add_to_cart_btn">
                                     <span class="theme-button_text">Add to Cart</span>
                                 </a>
                             </a>

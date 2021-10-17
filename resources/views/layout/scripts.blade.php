@@ -38,6 +38,21 @@
             }
         });
 
+        $('#inc').on('click',function (){
+            let quantity = parseInt($('#quantity').val());
+            if (quantity <= 100)
+            {
+                $('#quantity').val(quantity+1)
+            }
+        })
+        $('#decrese').on('click',function (){
+            let quantity = parseInt($('#quantity').val());
+            if (quantity >= 1)
+            {
+                $('#quantity').val(quantity-1)
+            }
+        })
+
 
     });
 </script>

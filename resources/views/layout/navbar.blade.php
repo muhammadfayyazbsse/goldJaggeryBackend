@@ -10,7 +10,7 @@
                     <div class="flyout-button_bar flyout-button_bar--top"></div>
                     <div class="flyout-button_bar flyout-button_bar--bottom"></div>
                 </div>
-                <a href="index.html" class="navbar_logo">
+                <a href="{{route('home')}}" class="navbar_logo">
                     <img src="assets/images/logo.png"
                          alt="Alter Eco Logo" class="navbar_logo_image">
                 </a>
@@ -20,10 +20,17 @@
                             <span class="navbar_top_link">My Bag</span>
                             <span class="goldbag"><i class="fas fa-shopping-bag"></i></span>
                         </a>
-                        <a href="{{route('login')}}" class="navbar_top_inline-block storeLocator">
-                            <span class="navbar_top_link">Login</span>
-                            <span class="goldbag"><i class="fas fa-user"></i></span>
-                        </a>
+                        @if (!Auth::check())
+                            <a href="{{route('login')}}" class="navbar_top_inline-block storeLocator">
+                                <span class="navbar_top_link">Login</span>
+                                <span class="goldbag"><i class="fas fa-user"></i></span>
+                            </a>
+                        @else
+                            <a href="{{route('logout')}}" class="navbar_top_inline-block storeLocator">
+                                <span class="navbar_top_link">Logout</span>
+                                <span class="goldbag"><i class="fas fa-user"></i></span>
+                            </a>
+                        @endif
                     </div>
                 </div>
                 <div class="navbar_bottom">
@@ -90,25 +97,25 @@
                         <h4 class="left-col_title left-col_title--border-bottom">Full Circle Sustainability</h4>
                         <div class="left-col_block-links">
 
-                            <a href="our-story.html" class="left-col_block-link">
+                            <a href="{{route('our-story')}}" class="left-col_block-link">
                                 <img src="assets/images/white_arrow.png"
                                      alt="Material Arrow Forward" class="block-link_icon">
                                 <span class="block-link_title">CHOOSE CLEAN INGREDIENTS</span>
                             </a>
 
-                            <a href="our-story.html" class="left-col_block-link">
+                            <a href="{{route('our-story')}}" class="left-col_block-link">
                                 <img src="assets/images/white_arrow.png"
                                      alt="Material Arrow Forward" class="block-link_icon">
                                 <span class="block-link_title">INVEST IN FARMERS</span>
                             </a>
 
-                            <a href="our-story.html" class="left-col_block-link">
+                            <a href="{{route('our-story')}}" class="left-col_block-link">
                                 <img src="assets/images/white_arrow.png"
                                      alt="Material Arrow Forward" class="block-link_icon">
                                 <span class="block-link_title">REGENERATE THE EARTH</span>
                             </a>
 
-                            <a href="our-story.html" class="left-col_block-link">
+                            <a href="{{route('our-story')}}" class="left-col_block-link">
                                 <img src="assets/images/white_arrow.png"
                                      alt="Material Arrow Forward" class="block-link_icon">
                                 <span class="block-link_title">ELIMINATE WASTE</span>
@@ -121,12 +128,12 @@
                     <div class="nav-dropdown_right-col_top nav-dropdown_right-col_top--alt">
                         <div class="top-content">
                             <div class="top-content_links">
-                                <a href="our-story"
+                                <a href="{{route('our-story')}}"
                                    class="top-content_link top-content_link--first top-content_link--top top-content_link--alt">OUR
                                     STORY</a>
                             </div>
                             <div class="top-content_links">
-                                <a href="our-story.html"
+                                <a href="{{route('our-story')}}"
                                    class="top-content_link top-content_link--first top-content_link--alt">B
                                     CORPORATION</a>
                             </div>
@@ -142,7 +149,7 @@
                         </script>
 
                     </div>
-                    <a href="our-story.html" class="nav-dropdown_right-col_bottom">
+                    <a href="{{route('our-story')}}" class="nav-dropdown_right-col_bottom">
                         <article class="nav-dropdown_right-col_richtext nav-dropdown_right-col_richtext--alt">
                             <p>2021 IMPACT<br>REPORT</p>
                             <img src="assets/images/arrow.png"
@@ -168,21 +175,21 @@
             </div>
             <div class="container">
                 <div class="nav-dropdown_left-col">
-                    <a href="blog.html" class="nav-dropdown_left-col_block">
+                    <a href="{{route('blog')}}" class="nav-dropdown_left-col_block">
                         <div class="nav-dropdown_col-content">
                             <img src="assets/images/Chocolate-Chunk-Cookies-Nav-Recipe_600x.jpg"
                                  alt="Shop RECIPES" class="nav-dropdown_col-content_image">
                             <h6 class="nav-dropdown_col-content_title">RECIPES</h6>
                         </div>
                     </a>
-                    <a href="blog.html" class="nav-dropdown_left-col_block">
+                    <a href="{{route('blog')}}" class="nav-dropdown_left-col_block">
                         <div class="nav-dropdown_col-content">
                             <img src="assets/images/Blog_600x.jpg"
                                  alt="Shop BLOG" class="nav-dropdown_col-content_image">
                             <h6 class="nav-dropdown_col-content_title">BLOG</h6>
                         </div>
                     </a>
-                    <a href="blog.html" class="nav-dropdown_left-col_block">
+                    <a href="{{route('blog')}}" class="nav-dropdown_left-col_block">
                         <div class="nav-dropdown_col-content">
                             <img src="assets/images/Supernav-Good-neighbor_600x.jpg"
                                  alt="Shop BEING A GOOD NEIGHBOUR" class="nav-dropdown_col-content_image">
@@ -194,15 +201,15 @@
                     <div class="nav-dropdown_right-col_top">
                         <div class="top-content">
                             <div class="top-content_links">
-                                <a href="blog.html"
+                                <a href="{{route('blog')}}"
                                    class="top-content_link top-content_link--first top-content_link--top">PRESS</a>
                             </div>
                             <div class="top-content_links">
-                                <a href="blog.html" class="top-content_link top-content_link--first">AWARDS</a>
+                                <a href="{{route('blog')}}" class="top-content_link top-content_link--first">AWARDS</a>
                             </div>
                         </div>
                     </div>
-                    <a href="blog.html" class="nav-dropdown_right-col_bottom">
+                    <a href="{{route('blog')}}" class="nav-dropdown_right-col_bottom">
                         <article class="nav-dropdown_right-col_richtext nav-dropdown_right-col_richtext--wider">
                             <p><strong>Featured<br></strong></p>
                             <p></p>
@@ -230,21 +237,21 @@
             </div>
             <div class="container">
                 <div class="nav-dropdown_left-col">
-                    <a href="shop.html" class="nav-dropdown_left-col_block">
+                    <a href="{{route('shop')}}" class="nav-dropdown_left-col_block">
                         <div class="nav-dropdown_col-content">
                             <img src="assets/images/shop-chocolate-bars_SuperNav_600x.jpg"
                                  alt="Shop BARS" class="nav-dropdown_col-content_image">
                             <h6 class="nav-dropdown_col-content_title">BARS</h6>
                         </div>
                     </a>
-                    <a href="shop.html" class="nav-dropdown_left-col_block">
+                    <a href="{{route('shop')}}" class="nav-dropdown_left-col_block">
                         <div class="nav-dropdown_col-content">
                             <img src="assets/images/shop-caramel-truffles-Super_Nav_600x.jpg"
                                  alt="Shop TRUFFLES" class="nav-dropdown_col-content_image">
                             <h6 class="nav-dropdown_col-content_title">TRUFFLES</h6>
                         </div>
                     </a>
-                    <a href="shop.html" class="nav-dropdown_left-col_block">
+                    <a href="{{route('shop')}}" class="nav-dropdown_left-col_block">
                         <div class="nav-dropdown_col-content">
                             <img src="assets/images/ezgif.com-gif-maker (1).png"
                                  alt="Shop GRASS FED MILK" class="nav-dropdown_col-content_image">
@@ -256,9 +263,9 @@
                     <div class="nav-dropdown_right-col_top">
                         <div class="top-content">
                             <div class="top-content_links">
-                                <a href="shop.html"
+                                <a href="{{route('shop')}}"
                                    class="top-content_link top-content_link--first top-content_link--top">BROWSE ALL</a>
-                                <a href="shop.html" class="top-content_link top-content_link--top" style="display: none;"></a>
+                                <a href="{{route('shop')}}" class="top-content_link top-content_link--top" style="display: none;"></a>
                             </div>
                             <div class="top-content_links">
                                 <a href="" class="top-content_link top-content_link--first top-content_link--third"
@@ -277,7 +284,7 @@
                         </script>
 
                     </div>
-                    <a href="shop.html" class="nav-dropdown_right-col_bottom">
+                    <a href="{{route('shop')}}" class="nav-dropdown_right-col_bottom">
                         <article class="nav-dropdown_right-col_richtext">
                             <p></p>
                             <p></p>

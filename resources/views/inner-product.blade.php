@@ -30,9 +30,9 @@
                 <h5 class="swatches__option-name"><strong>Size:</strong> <span id="selected-option-1" class="swatches__option-value">60 count</span></h5>
                 <div class="qty-selection">
                     <h5>Quantity</h5>
-                    <a class="down quantity-control-down" field="quantity">-</a>
-                    <input min="1" type="text" name="quantity" class="quantity" value="1">
-                    <a class="up quantity-control-up" field="quantity">+</a>
+                    <a class="down quantity-control-down" field="quantity" id="decrese">-</a>
+                    <input min="1" type="text" name="quantity" id="quantity" class="quantity" value="1">
+                    <a class="up quantity-control-up" field="quantity" id="inc">+</a>
                 </div>
                 <a href="#" class="add_to_cart_btn">
                     <span class="theme-button_text">Add to Cart</span>

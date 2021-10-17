@@ -11,16 +11,29 @@
                             Register
                         </span>
                         </div>
-                        <form method="post" action="" id="contact_form" accept-charset="UTF-8" class="contact-form">
+                        @if(count($errors) > 0 )
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Wrong!</strong> {{$errors->first()}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @endif
+                        <form method="post" action="{{route('doRegister')}}" id="contact_form" accept-charset="UTF-8" class="contact-form">
+                            @csrf
                             <div class="contact-form">
                                 <div class="contact-form_row">
-                                    <input type="text" name="firstName" class="contact-form_input border-top-input" placeholder="First Name" required/>
+                                    <input type="text" name="first_name" class="contact-form_input border-top-input" placeholder="First Name" required/>
                                 </div>
                                 <div class="contact-form_row">
-                                    <input type="text" name="lastName" class="contact-form_input border-top-input" placeholder="Last Name" required/>
+                                    <input type="text" name="last_name" class="contact-form_input border-top-input" placeholder="Last Name" required/>
                                 </div>
                                 <div class="contact-form_row">
-                                    <input type="email" name="contact[email]" class="contact-form_input border-top-input" placeholder="email*" required/>
+                                    <input type="tel" name="phone" pattern="[0-9]{4}[0-9]{7}"
+                                           title="Phone number with 0-9 and total digit length is 11" class="contact-form_input border-top-input" placeholder="phone number*" required/>
+                                </div>
+                                <div class="contact-form_row">
+                                    <input type="email" name="email" class="contact-form_input border-top-input" placeholder="email*" required/>
                                 </div>
                                 <div class="contact-form_row">
                                     <input type="password" name="password" class="contact-form_input border-top-input" placeholder="password" required/>

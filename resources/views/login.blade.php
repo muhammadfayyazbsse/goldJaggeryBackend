@@ -11,10 +11,19 @@
                             login
                         </span>
                         </div>
-                        <form method="post" action="" id="contact_form" accept-charset="UTF-8" class="contact-form">
+                        @if($errors->any() || Session::get('error') )
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Wrong!</strong> {{$errors->first()}} {{Session::get('error')}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+                        <form method="post" action="{{route('doLogin')}}" id="contact_form" accept-charset="UTF-8" class="contact-form">
+                            @csrf
                             <div class="contact-form">
                                 <div class="contact-form_row">
-                                    <input type="email" name="contact[email]" class="contact-form_input border-top-input" placeholder="email*" required/>
+                                    <input type="email" name="email" class="contact-form_input border-top-input" placeholder="email*" required/>
                                 </div>
                                 <div class="contact-form_row">
                                     <input type="password" name="password" class="contact-form_input border-top-input" placeholder="password" required/>

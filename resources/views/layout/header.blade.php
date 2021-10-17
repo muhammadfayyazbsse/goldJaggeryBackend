@@ -12,3 +12,50 @@
     <script src="https://kit.fontawesome.com/de2190a8a6.js" crossorigin="anonymous"></script>
     <link href="//db.onlinewebfonts.com/c/752207253c09fa54b07fcea869b76412?family=ITC+Avant+Garde+Gothic+Demi"
           rel="stylesheet" type="text/css"/>
+
+    <style>
+        .fade.show {
+            opacity: 1;
+        }
+        .alert-warning {
+            color: #ffffff;
+            background-color: red;
+            border-color: #ffeeba;
+        }
+        .alert {
+            position: relative;
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+        }
+        .fade {
+            opacity: 0;
+            transition: opacity .15s linear;
+        }
+        .close:not(:disabled):not(.disabled) {
+            cursor: pointer;
+        }
+        .alert-dismissible .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: .75rem 1.25rem;
+            color: inherit;
+        }
+        button.close {
+            padding: 0;
+            background-color: transparent;
+            border: 0;
+            -webkit-appearance: none;
+        }
+        .close {
+            float: right;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .5;
+        }
+    </style>
