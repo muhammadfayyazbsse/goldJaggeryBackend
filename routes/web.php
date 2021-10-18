@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AuthController;
+use App\Http\Controllers\Backend\StripeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +58,9 @@ Route::post('login',[AuthController::class, 'customLogin'])->name('doLogin');
 Route::get('register',[AuthController::class, 'register'])->name('register');
 Route::post('register',[AuthController::class, 'customRegistration'])->name('doRegister');
 });
+
+Route::get('stripe', [StripeController::class, 'stripe']);
+Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
 
 Route::group(['private','middleware'=>['auth']], function () {
     Route::get('logout',[AuthController::class, 'logout'])->name('logout');

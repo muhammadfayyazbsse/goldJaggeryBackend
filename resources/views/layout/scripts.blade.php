@@ -1,5 +1,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/alchemyjs/0.4.2/scripts/vendor.js"></script>
-<script src={{asset('assets/js/jquery.min.js')}}''></script>
+<script src={{asset('assets/js/jquery.min.js')}}></script>
 <script src={{asset('assets/js/owl.carousel.min.js')}}></script>
 <script src={{asset('assets/js/gold-jaggry-shopify.js')}}></script>
 <script>
@@ -55,4 +55,72 @@
 
 
     });
+</script>
+
+
+<script>
+    $ = jQuery;
+    $( document ).ready(function() {
+
+        $h_slider_options =  {
+            gallery: true,
+            item: 1,
+            loop:true,
+            slideMargin: 0,
+            thumbItem: 6,
+            galleryMargin: 10,
+            thumbMargin: 10,
+        };
+
+        $v_slider_options = {
+            gallery: true,
+            item: 1,
+            loop:true,
+            slideMargin: 0,
+            thumbItem: 6,
+            galleryMargin: 10,
+            thumbMargin: 10,
+            vertical: true
+        };
+
+        h_slider = $('#lightSlider').lightSlider($h_slider_options);
+        v_slider = $('#lightSliderVertical').lightSlider($v_slider_options);
+
+        $selector = '#lightSlider li:not(".clone") a';
+        $selector += ',#lightSliderVertical li:not(".clone") a';
+        $().fancybox({
+            selector : $selector,
+            backFocus : false,
+            buttons : [
+                'slideShow',
+                'share',
+                'zoom',
+                'fullScreen',
+                'thumbs',
+                'download',
+                'close'
+            ]
+        });
+    });
+
+    $( window ).resize(function() {
+        slider.destroy();
+        h_slider = $('#ocassions-slider').lightSlider(h_slider_options);
+    });
+</script>
+<script>
+    var coll = document.getElementsByClassName("js-accordion-title");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
 </script>
